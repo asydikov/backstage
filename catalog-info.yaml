@@ -3,11 +3,15 @@ kind: Component
 metadata:
   name: backstage
   description: An example of a Backstage application.
+  tags:
+    - javascript
+    - react
+    - nodejs
   # Example for optional annotations
   annotations:
     github.com/project-slug: asydikov/backstage
     backstage.io/techdocs-ref: dir:.
 spec:
   type: website
-  owner: john@example.com
+  owner: aziz@example.com
   lifecycle: experimental
