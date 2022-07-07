@@ -12,6 +12,11 @@ backend:
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
+  reading:
+    allow:
+      - host: localhost
+      - host: 'localhost*'
+      - host: localhost:16280
   baseUrl: http://localhost:7007
   listen:
     port: 7007
@@ -29,10 +34,17 @@ backend:
   # This is for local developement only, it is not recommended to use this in production
   # The production database configuration is stored in app-config.production.yaml
   database:
-    client: better-sqlite3
-    connection: ':memory:'
-  cache:
-    store: memory
+#    client: better-sqlite3
+#    connection: ':memory:'
+    # config options: https://node-postgres.com/api/client
+    client: pg
+    connection:
+      host: ${BACKSTAGE_POSTGRES_HOST}
+      port: ${BACKSTAGE_POSTGRES_PORT}
+      user: ${BACKSTAGE_POSTGRES_USER}
+      password: ${BACKSTAGE_POSTGRES_PASSWORD}
+#  cache:
+#    store: memory
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
 
 integrations:
