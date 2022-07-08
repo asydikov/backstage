@@ -61,3 +61,169 @@ spec:
     email: guest@example.com
     picture: https://avatars.dicebear.com/api/avataaars/guest@example.com.svg?background=%23fff
   memberOf: [core]
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: product
+  description: Product Team
+spec:
+  type: team
+  profile:
+    # Intentional no displayName for testing
+    email: product-core@example.com
+    picture: https://avatars.dicebear.com/api/identicon/team-a@example.com.svg?background=%23fff&margin=25
+    parent: backstage
+    children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: SQLMonitor
+  description: SQLMonitor
+spec:
+  type: team
+  profile:
+    # Intentional no displayName for testing
+    email: sqlMonitor@example.com
+    picture: https://avatars.dicebear.com/api/identicon/team-a@example.com.svg?background=%23fff&margin=25
+  parent: product
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: Rootmasters
+  description: Rootmasters
+spec:
+  type: team
+  profile:
+    # Intentional no displayName for testing
+    email: rootmasters@example.com
+    picture: https://avatars.dicebear.com/api/identicon/team-a@example.com.svg?background=%23fff&margin=25
+  parent: SQLMonitor
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: BigWhoppers
+  description: Big Whoppers
+spec:
+  type: team
+  profile:
+    # Intentional no displayName for testing
+    email: bigWhoppers@example.com
+    picture: https://avatars.dicebear.com/api/identicon/team-a@example.com.svg?background=%23fff&margin=25
+  parent: SQLMonitor
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: pgTips
+  description: pgTips
+spec:
+  type: team
+  profile:
+    # Intentional no displayName for testing
+    email: pgTips@example.com
+    picture: https://avatars.dicebear.com/api/identicon/team-a@example.com.svg?background=%23fff&margin=25
+  parent: SQLMonitor
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: dragons
+  description: Dragons
+spec:
+  type: team
+  profile:
+    # Intentional no displayName for testing
+    email: dragons@example.com
+    picture: https://avatars.dicebear.com/api/identicon/team-a@example.com.svg?background=%23fff&margin=25
+  parent: SQLMonitor
+  children: []
+  
+  
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: Aziz
+spec:
+  profile:
+    displayName: Aziz
+    email: aziz@example.com
+    picture: https://avatars.dicebear.com/api/avataaars/janelle-dawe@example.com.svg?background=%23fff
+  memberOf: [ rootmasters ]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: Andrew
+spec:
+  profile:
+    displayName: Andrew
+    email: andrew@example.com
+    picture: https://avatars.dicebear.com/api/avataaars/janelle-dawe@example.com.svg?background=%23fff
+  memberOf: [ rootmasters ]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: Josh
+spec:
+  profile:
+    displayName: Josh
+    email: josh@example.com
+    picture: https://avatars.dicebear.com/api/avataaars/janelle-dawe@example.com.svg?background=%23fff
+  memberOf: [ rootmasters ]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: Chris
+spec:
+  profile:
+    displayName: Chris
+    email: chris@example.com
+    picture: https://avatars.dicebear.com/api/avataaars/janelle-dawe@example.com.svg?background=%23fff
+  memberOf: [ rootmasters ]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: Jack
+spec:
+  profile:
+    displayName: Jack
+    email: jack@example.com
+    picture: https://avatars.dicebear.com/api/avataaars/janelle-dawe@example.com.svg?background=%23fff
+  memberOf: [ rootmasters ]
+  
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: Diogo
+spec:
+  profile:
+    displayName: Diogo
+    email: giogo@example.com
+    picture: https://avatars.dicebear.com/api/avataaars/janelle-dawe@example.com.svg?background=%23fff
+  memberOf: [ dragons ]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: Naz
+spec:
+  profile:
+    displayName: Naz
+    email: naz@example.com
+    picture: https://avatars.dicebear.com/api/avataaars/janelle-dawe@example.com.svg?background=%23fff
+  memberOf: [ dragons ]
